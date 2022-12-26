@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='ephemeral') }}
 
 with f_agg as (select * from {{ ref('first_agreggations')}} 
 ),

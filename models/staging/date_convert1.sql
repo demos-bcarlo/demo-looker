@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='ephemeral') }}
 
 select
     FORMAT_DATE('%Y-%m',  dataFormatada) as mes_ano,
