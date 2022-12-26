@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+    - name: LTV_GA
+      database: 'leega-poc-delivery-inovacao'
+      schema: LTV_GA
+      tables:
+        - name: LTV_GA_teste
+          description: Dataset Raw do LTV.
