@@ -1,0 +1,12 @@
+{{ config(materialized='view') }}
+
+select
+    PARSE_DATE('%b %d, %Y',  data) as dataFormatada,
+    grupoUsuarios, 
+    pais,
+    cidade, 
+    receita, 
+    imposto, 
+    frete, 
+    quantidade
+from {{ source('LTV_GA', 'LTV_GA_teste') }}
