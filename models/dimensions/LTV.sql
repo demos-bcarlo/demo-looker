@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='incremental') }}
 
 with dim_GA_ as (select * from {{ ref('dim_GA_LTV')}}
 ),
