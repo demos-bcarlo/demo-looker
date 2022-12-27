@@ -2,7 +2,7 @@ version: 2
 
 sources:
     - name: poc_looker
-      database: 'leega-c4m-poc-gadgets.poc_looker'
+      database: 'leega-c4m-poc-gadgets'
       schema: poc_looker
       tables:
         - name: raw_dbt
