@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-    - name: LTV_GA
-      database: 'leega-poc-delivery-inovacao'
-      schema: LTV_GA
+    - name: poc_looker
+      database: 'leega-c4m-poc-gadgets.poc_looker'
+      schema: poc_looker
       tables:
-        - name: LTV_GA_teste
+        - name: raw_dbt
           description: Dataset Raw do LTV.
