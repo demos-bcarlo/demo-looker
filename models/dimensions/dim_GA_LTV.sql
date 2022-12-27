@@ -13,7 +13,7 @@ dim_GA as(
         f_agg.qtdTransacoes, 
         f_agg.receitaLiquida,
         (f_agg.receitaLiquida/f_agg.qtdTransacoes) as ticketMedio, 
-        (f_agg.receitaLiquida/f_agg.totalreceita) * 100 as margemLucro
+        SAFE_DIVIDE(f_agg.receitaLiquida, f_agg.totalreceita) * 100 as margemLucro
     from f_agg
 )
 
