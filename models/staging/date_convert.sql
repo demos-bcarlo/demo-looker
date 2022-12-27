@@ -9,4 +9,4 @@ select
     imposto, 
     frete, 
     quantidade
-from {{ source('LTV_GA', 'LTV_GA_teste') }}
+from {{ source('poc_looker', 'raw_dbt') }}
