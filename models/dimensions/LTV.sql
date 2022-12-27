@@ -14,7 +14,7 @@ LTV_final as(
         dim_GA_.receitaLiquida,
         dim_GA_.ticketMedio, 
         dim_GA_.margemLucro, 
-        (dim_GA_.receitaLiquida / 0.15) * dim_GA_.margemLucro as LTV
+        CASE WHEN dim_GA_.receitaLiquida < 0 then null else (dim_GA_.receitaLiquida / 0.15) * dim_GA_.margemLucro as LTV END
     from dim_GA_
 )
 
