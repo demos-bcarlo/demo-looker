@@ -1,4 +1,4 @@
-{{ config(materialized='ephemeral') }}
+{{ config(materialized='table') }}
 
 with f_agg as (select * from {{ ref('first_agreggations')}} 
 ),
@@ -6,7 +6,6 @@ with f_agg as (select * from {{ ref('first_agreggations')}}
 dim_GA as(
     select
         f_agg.mes_ano,
-        f_agg.grupoUsuarios, 
         f_agg.totalreceita, 
         f_agg.totalImposto,
         f_agg.totalFrete, 

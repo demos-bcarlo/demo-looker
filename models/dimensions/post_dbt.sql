@@ -1,4 +1,4 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='table') }}
 
 with dim_GA_ as (select * from {{ ref('dim_GA_LTV')}}
 ),
@@ -6,7 +6,6 @@ with dim_GA_ as (select * from {{ ref('dim_GA_LTV')}}
 LTV_final as(
     select
         dim_GA_.mes_ano,
-        dim_GA_.grupoUsuarios, 
         dim_GA_.totalreceita, 
         dim_GA_.totalImposto,
         dim_GA_.totalFrete, 
@@ -14,10 +13,10 @@ LTV_final as(
         dim_GA_.receitaLiquida,
         dim_GA_.ticketMedio, 
         dim_GA_.margemLucro, 
-        (dim_GA_.receitaLiquida/0.15) * dim_GA_.margemLucro as LTV
+        (dim_GA_.ticketMedio/0.15) * dim_GA_.margemLucro as LTV
     from dim_GA_
 )
 
-select * from LTV_final order by mes_ano
+select * from LTV_final
 
 
