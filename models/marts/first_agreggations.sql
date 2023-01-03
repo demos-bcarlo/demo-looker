@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='ephemeral') }}
 
 with date_convertsql as (select * from {{ ref('date_convert1')}} 
 ),

@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='ephemeral') }}
 
 select
     PARSE_DATE('%b %d, %Y',  data) as dataFormatada,
